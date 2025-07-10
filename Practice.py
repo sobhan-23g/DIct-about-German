@@ -1,3 +1,30 @@
+def show_help(Dict):
+    print("(-_-)") 
+    print("Hello, I am a helper. 📘")
+
+    num = input("Can I help you? (yes/no): ")
+    if num == "no":
+        print("Okay, goodbye... ")
+        return
+
+    print("\nAvailable keys:")
+    for key in Dict:
+        if key != "help":
+            print(f" - {key}")
+
+    selected = input("\nWhich key do you want information about? Type here: ")
+
+    if selected in Dict:
+        value = Dict[selected]
+        if isinstance(value, dict):
+            print(f"Information under '{selected}':")
+            for num2, num3 in value.items():
+                print(f" -  {num2}: {num3}")
+        else:
+            print(f"Information for '{selected}': {value}")
+    else:
+        print("This key was not found. Please check your spelling.")
+
 country={
     "Name":"German or Deutschland",
     "Capital":"Berlin",
